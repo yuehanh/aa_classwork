@@ -1,0 +1,17 @@
+minesweeper
+
+create a board of 9x9
+create random number of bombs 
+
+player choose a coordinate
+
+x,y
+
+([x-1,y] [x+1,y],[x+1,y+1],[x-1, y+1], [x-1,y-1],[x+1,y-1], [x,y+1] , [x,y-1]).count == zero
+
+tiles has a readable value on count of adjacent bombs
+
+
+run reveal on all surrounding coordinates
+
+totleal - number of bombs  -= number of tiles revealed
