@@ -1,4 +1,5 @@
 require_relative 'card'
+require "byebug"
 
 
 
@@ -9,15 +10,20 @@ class Hand
         @rank = [0]
         hash_hand
         rank_hand
+        
     end
 
     def <=>(other_hand)
         rank <=> other_hand.rank
     end
+
+    def show_hand
+        hand
+    end
     
     # protected
     attr_reader :hand
-    attr_accessor :hsh_suits, :hsh_value, :rank
+    attr_accessor :hsh_suits, :hsh_value, :rank, :hand_value
 
     def hash_hand
         @hsh_suits = Hash.new(0)
@@ -25,9 +31,15 @@ class Hand
             hsh_suits[card.suit] += 1
         end
 
-        @hsh_value = Hash.new(0)
+        hsh_unsorted = Hash.new(0)
         hand.each do |card|
-            hsh_value[card.val] += 1
+            hsh_unsorted[card.val] += 1
+        end
+
+        @hand_value = hsh_unsorted.keys.sort.reverse
+        @hsh_value = Hash.new(0)
+        @hand_value.each do |key|
+            hsh_value[key] = hsh_unsorted[key]
         end
     end
 
@@ -36,8 +48,8 @@ class Hand
     end
 
     def straight
-        hand_value = hsh_value.keys.sort  #hand.map {|card| card.val}.uniq.sort
-        (hand_value.length == 5 && (hand_value[-1] - hand_value[0]) == 4) ? 8 : 0
+        # hand_value = @sorted_keys   #hand.map {|card| card.val}.uniq.sort
+        (hand_value.length == 5 && (hand_value[0] - hand_value[-1]) == 4) ? 8 : 0
     end
 
     def like_kinds
@@ -78,6 +90,7 @@ if $PROGRAM_NAME == __FILE__
     p testhand.rank
     p testhand2.rank
     p testhand <=> testhand2
+    p testhand.show_hand
 end
 # @[value= 1 ..19, 14,13,12,4,2 ]
 # @[value ,    6,5,4,2,2]   hand1 <=> hand2

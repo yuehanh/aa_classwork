@@ -8,4 +8,8 @@ class Card
         @val = val
         @color = (SUITS[0..1].include?(suit) ? :blue : :red)
     end
+
+    def inspect
+        "#{suit} #{val}"
+    end
 end
