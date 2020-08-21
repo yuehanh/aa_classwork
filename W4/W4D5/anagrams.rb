@@ -11,7 +11,7 @@ def permutation(arr)   #n!
     subarr = permutation(arr)
     subarr.each do |el|
         (0..el.length).each do |i|
-            perms << el.take(i) + [first] + el.drop(i) 
+            perms << el.take(i) + [first] + el.drop(i)
         end
     end
     perms

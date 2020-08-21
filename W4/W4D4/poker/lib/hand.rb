@@ -8,6 +8,8 @@ class Hand
     def initialize(arr)
         @hand = arr
         @rank = [0]
+        @hsh_suits = Hash.new(0)
+        @hsh_unsorted = Hash.new(0)
         hash_hand
         rank_hand
         
@@ -23,24 +25,19 @@ class Hand
     
     # protected
     attr_reader :hand
-    attr_accessor :hsh_suits, :hsh_value, :rank, :hand_value
+    attr_accessor :hsh_suits, :rank, :hand_value_pair, :hsh_unsorted
 
     def hash_hand
-        @hsh_suits = Hash.new(0)
         hand.each do |card|
             hsh_suits[card.suit] += 1
         end
 
-        hsh_unsorted = Hash.new(0)
         hand.each do |card|
             hsh_unsorted[card.val] += 1
         end
-
-        @hand_value = hsh_unsorted.keys.sort.reverse
-        @hsh_value = Hash.new(0)
-        @hand_value.each do |key|
-            hsh_value[key] = hsh_unsorted[key]
-        end
+        
+        @hand_value_pair = hsh_unsorted.sort_by {|k,v| [-v,-k] } 
+        
     end
 
     def flush
@@ -48,12 +45,10 @@ class Hand
     end
 
     def straight
-        # hand_value = @sorted_keys   #hand.map {|card| card.val}.uniq.sort
-        (hand_value.length == 5 && (hand_value[0] - hand_value[-1]) == 4) ? 8 : 0
+        (hand_value_pair.length == 5 && (hand_value_pair[0][0] - hand_value_pair[-1][0]) == 4) ? 8 : 0
     end
 
     def like_kinds
-        @hand_value_pair = hsh_value.sort_by {|k,v| -v} #need to have a better sorting for 2pairs adn straights
         largest_count = @hand_value_pair[0][1]
         num_uniqs = @hand_value_pair.length
 
@@ -71,11 +66,12 @@ class Hand
 
     def rank_hand
         rank[0] += flush + straight + like_kinds
-        rank[0] = 18 if rank[0] == 17 && hsh_value.key?(14)
+        rank[0] = 18 if rank[0] == 17 && hsh_unsorted.key?(14)
         
         @hand_value_pair.each do |el|
             @rank += [el[0]]*el[1]   
         end
+
         rank
     end
 

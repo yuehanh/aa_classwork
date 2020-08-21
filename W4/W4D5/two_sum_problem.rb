@@ -33,11 +33,6 @@ end
 p okay_two_sum?(arr, 6) # => should be true
 p okay_two_sum?(arr, 10) # => should be false
 
-target
-array
-hash
-
-
 def two_sum?(arr,num) #n
     hsh = {}
     arr.each do |el|

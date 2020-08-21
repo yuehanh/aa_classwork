@@ -11,7 +11,7 @@ def largest_contiguous_subsum_p1(arr)
     largestsum = arr[0]
     (0...arr.length).each do |i|
         (i...arr.length).each do |j|
-            largestsum = arr[i..j].sum if arr[i..j].sum > largestsum
+            largestsum = arr[i..j].sum if arr[i..j].sum  > largestsum
         end
     end
     largestsum
