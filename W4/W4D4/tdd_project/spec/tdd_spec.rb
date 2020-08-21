@@ -36,6 +36,7 @@ describe '#two_sum' do
 
   context 'when there are no pairs' do
     it 'return an empty array' do
+
       expect([1, 2, 3, 4].two_sum).to eq([])
     end
   end
@@ -57,9 +58,15 @@ end
 
 describe '#stock_picker' do
     it "returns the index of the most profitable pair" do
-        prices = [0, 10, 5, 17, 20, 23, 2]
+      prices = [0, 10, 5, 17, 20, 23, 2]
         expect(stock_picker(prices)).to eq([0, 5])
     end
 
+    context 'when there is no profitable pair' do
+      it 'returns an empty array' do
+        prices = [9.3,2,1] 
+      expect(stock_picker(prices)).to eq([])
+      end
+    end
 end
 
