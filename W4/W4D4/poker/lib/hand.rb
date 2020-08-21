@@ -42,7 +42,7 @@ class Hand
 
     def like_kinds
         @hand_value_pair = hsh_value.sort_by {|k,v| -v} #need to have a better sorting for 2pairs adn straights
-        largest_count = hand_value_pair[0][1]
+        largest_count = @hand_value_pair[0][1]
         num_uniqs = @hand_value_pair.length
 
         case largest_count
@@ -71,7 +71,7 @@ class Hand
 end
 
 if $PROGRAM_NAME == __FILE__
-    arr = [Card.new('S',2),Card.new('D',2),Card.new('C',2),Card.new('D',5),Card.new('C',5)]
+    arr = [Card.new('S',5),Card.new('D',2),Card.new('C',2),Card.new('D',5),Card.new('C',5)]
     arr2 = [Card.new('D',2),Card.new('D',3),Card.new('D',4),Card.new('D',5),Card.new('D',6)]
     testhand = Hand.new(arr)
     testhand2 = Hand.new(arr2)
