@@ -42,3 +42,22 @@ def two_sum?(arr,num) #n
     end
     false
 end
+
+
+
+def two_sum_with_index(arr,num)
+    hsh = Hash.new {|h,k| h[k] = [] }
+    indices = []
+    arr.each_with_index do |el,i|
+        unless hsh[el].empty?
+            hsh[el].each {|j| indices << [j,i]}
+        end
+        hsh[num - el] << i
+    end
+    indices.sort_by { |el| el.first }
+end
+
+
+arr = [0, 1, 5, 7, 5, 6, 1, 5]
+p two_sum_with_index(arr, 6) # => should be true
+p two_sum_with_index(arr, 10) # => should be false
