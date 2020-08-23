@@ -1,12 +1,11 @@
 def bad_two_sum?(arr, num)
     arr.each_index do |i|
-        (i + 1 ...arr.length).each do |j|
+        (i + 1...arr.length).each do |j|
             return true if arr[i] + arr[j] == num
         end
     end
     false
 end
-
 
 arr = [0, 1, 5, 7]
 # p bad_two_sum?(arr, 6) # => should be true
@@ -14,7 +13,7 @@ arr = [0, 1, 5, 7]
 
 def okay_two_sum?(arr, num)
     arr1 = arr.sort
-    i = 0 
+    i = 0
     j = arr.length - 1
 
     while i < j
@@ -33,30 +32,25 @@ end
 p okay_two_sum?(arr, 6) # => should be true
 p okay_two_sum?(arr, 10) # => should be false
 
-def two_sum?(arr,num) #n
+def two_sum?(arr, num) # n
     hsh = {}
     arr.each do |el|
-        return true if hsh.key?{el}
-        
+        return true if hsh.key? { el }
+
         hsh[num - el] = true
     end
     false
 end
 
-
-
-def two_sum_with_index(arr,num)
-    hsh = Hash.new {|h,k| h[k] = [] }
+def two_sum_with_index(arr, num)
+    hsh = Hash.new { |h, k| h[k] = [] }
     indices = []
-    arr.each_with_index do |el,i|
-        unless hsh[el].empty?
-            hsh[el].each {|j| indices << [j,i]}
-        end
+    arr.each_with_index do |el, i|
+        hsh[el].each { |j| indices << [j, i] } unless hsh[el].empty?
         hsh[num - el] << i
     end
-    indices.sort_by { |el| el.first }
+    indices.sort_by(&:first)
 end
-
 
 arr = [0, 1, 5, 7, 5, 6, 1, 5]
 p two_sum_with_index(arr, 6) # => should be true
