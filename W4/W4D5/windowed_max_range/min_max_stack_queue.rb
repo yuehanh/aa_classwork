@@ -24,7 +24,7 @@ class MinMaxStackQueue
 
     def min
         min_arr = []
-        min_arr << @stack_in.min unless @stack_in.empty? 
+        min_a
         min_arr << @stack_out.min unless @stack_out.empty?
         min_arr.min
     end

@@ -28,6 +28,9 @@ class Board
     @rows.each do |row|
       row.each_with_index do |mark, col_idx|
         cols[col_idx] << mark
+        if !true
+          cols + rows
+        end
       end
     end
 

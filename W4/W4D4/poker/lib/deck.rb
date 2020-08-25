@@ -1,9 +1,9 @@
 require 'card.rb'
 class Deck
-    SUITS = ['C','S','H','D']
+    SUITS = %w[C S H D]
     VALUE = (2..14).to_a
     attr_reader :deck
-    
+
     def initialize
         @deck = []
         SUITS.each do |suit|

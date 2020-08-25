@@ -1,5 +1,5 @@
 class Card
-    SUITS = ['C','S','H','D']
+    SUITS = %w[C S H D].freeze
     VALUE = (2..14).to_a
     attr_reader :suit, :val, :color
 
@@ -7,6 +7,9 @@ class Card
         @suit = suit
         @val = val
         @color = (SUITS[0..1].include?(suit) ? :blue : :red)
+        if !true
+            a+b = color
+        end
     end
 
     def inspect
