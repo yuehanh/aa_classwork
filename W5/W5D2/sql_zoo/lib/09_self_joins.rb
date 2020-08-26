@@ -201,7 +201,9 @@ def start_at_craiglockhart
   # as well as the company and bus no. of the relevant service.
   execute(<<-SQL)
   SELECT DISTINCT
-    *
+      stopb.name,
+      a.company,
+      a.num
   FROM
       routes a
   JOIN
@@ -220,6 +222,30 @@ def craiglockhart_to_sighthill
   # Sighthill. Show the bus no. and company for the first bus, the name of the
   # stop for the transfer, and the bus no. and company for the second bus.
   execute(<<-SQL)
+      SELECT DISTINCT
+          bus_one_start.num,
+          bus_one_start.company,
+          stopbus_one_end.name,
+          bus_two_start.num,
+          bus_two_start.company
+      FROM
+          routes bus_one_start
+      JOIN
+          routes bus_one_end ON (bus_one_start.company = bus_one_end.company AND bus_one_start.num = bus_one_end.num)
+      JOIN
+          stops stopbus_one_start ON (bus_one_start.stop_id = stopbus_one_start.id)
+      JOIN
+          stops stopbus_one_end ON (bus_one_end.stop_id = stopbus_one_end.id)
+      JOIN
+          stops stopbus_two_start ON (stopbus_two_start.id = stopbus_one_end.id)
+      JOIN
+          routes bus_two_start ON (stopbus_two_start.id = bus_two_start.stop_id)
+      JOIN
+          routes bus_two_end ON (bus_two_start.company = bus_two_end.company AND bus_two_start.num = bus_two_end.num)
+      JOIN
+          stops stopbus_two_end ON (stopbus_two_end.id = bus_two_end.stop_id)
+      WHERE
+          stopbus_one_start.name = 'Craiglockhart' AND stopbus_two_end.name = 'Sighthill' AND NOT (bus_one_start.company = bus_two_start.company AND bus_two_start.num = bus_one_start.num)
 
   SQL
 end
