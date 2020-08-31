@@ -43,8 +43,8 @@ def lrt_stops
       stops.id, stops.name
   FROM
       routes
-      JOIN stops
-          ON stop_id = id
+      JOIN 
+      stops ON stop_id = id
   WHERE
       routes.num = '4' AND company = 'LRT'
   SQL
