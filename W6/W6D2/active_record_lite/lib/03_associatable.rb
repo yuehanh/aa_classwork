@@ -3,48 +3,51 @@ require 'active_support/inflector'
 
 # Phase IIIa
 class AssocOptions
-  attr_accessor(
-    :foreign_key,
-    :class_name,
-    :primary_key
-  )
+    attr_accessor(
+        :foreign_key,
+        :class_name,
+        :primary_key
+    )
 
-  def model_class
-    # ...
-  end
+    def model_class
+        # ...
+    end
 
-  def table_name
-    # ...
-  end
+    def table_name
+        # ...
+    end
 end
 
 class BelongsToOptions < AssocOptions
-  def initialize(name, options = {})
-    # ...
-  end
+    def initialize(name, options = {})
+        # ...
+        primary_key:  :id
+        class_name: name.classify
+        foreign_key: (name + '_id').to_sym}
+    end
 end
 
 class HasManyOptions < AssocOptions
-  def initialize(name, self_class_name, options = {})
-    # ...
-  end
+    def initialize(name, self_class_name, options = {})
+        # ...
+    end
 end
 
 module Associatable
-  # Phase IIIb
-  def belongs_to(name, options = {})
-    # ...
-  end
+    # Phase IIIb
+    def belongs_to(name, options = {})
+        # ...
+    end
 
-  def has_many(name, options = {})
-    # ...
-  end
+    def has_many(name, options = {})
+        # ...
+    end
 
-  def assoc_options
-    # Wait to implement this in Phase IVa. Modify `belongs_to`, too.
-  end
+    def assoc_options
+        # Wait to implement this in Phase IVa. Modify `belongs_to`, too.
+    end
 end
 
 class SQLObject
-  # Mixin Associatable here...
+    # Mixin Associatable here...
 end
