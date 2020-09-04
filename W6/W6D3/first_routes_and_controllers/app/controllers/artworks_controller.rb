@@ -4,10 +4,37 @@ class ArtworksController < ApplicationController
     end
 
     def create
-        artwork = Artowrk.new(artwork_params)
+        artwork = Artwork.new(artwork_params)
         if artwork.save
-            render jason: artwork
+            render json: artwork
         else
-            render artwork.errors_full_message, 
+            render json: artwork.errors.full_messages, status: :unprocessable_entity
+        end
     end
+
+    def show
+        render json: User.find(params[:id])
+    end
+
+    def update
+        artwork = Artwork.find(params[:id])
+        if artwork.update(artwork_params)
+            render json: artwork
+        else
+            render json: artwork.errors.full_messages, status: :unprocessable_entity
+        end
+    end
+
+    def destroy
+        artwork = Artwork.find(params[:id])
+        artwork.destroy
+        render json: artwork
+    end
+
+    private
+
+    def artwork_params
+        params.require(:artwork).permit(:artist_id, :title, :image_url)
+    end
+
 end
