@@ -5,16 +5,26 @@
 <thead> 
     <tr> <th colspan = "5"> All Cats </th> </tr>
 </thead>
-<tbody> <tr> <td>Name</td> <td>Sex</td> <td>Color</td> <td>Birth Date</td><td>Description</td></tr>
-<% @cats.each do |cat| %>
+<tbody> 
     <tr> 
-    <td> <a href = "<%= cat_url(cat) %>" > <%= cat.name %> </a> </td> 
-    <td> <%= cat.sex %> </td>
-    <td> <%= cat.color %> </td>
-    <td> <%= cat.birth_date %> </td>
-    <td> <%= cat.description %> </td>   
+        <td>Name</td> 
+        <td>Sex</td>
+        <td>Color</td> 
+        <td>Birth Date</td>
+        <td>Description</td>
     </tr>
-<% end %>
+
+    <% @cats.each do |cat| %>
+        <tr> 
+            <td> 
+                <a href = "<%= cat_url(cat) %>" > <%= cat.name %> </a> 
+            </td> 
+            <td> <%= cat.sex %> </td>
+            <td> <%= cat.color %> </td>
+            <td> <%= cat.birth_date %> </td>
+            <td> <%= cat.description %> </td>   
+        </tr>
+    <% end %>
 </tbody>
 
 </table>

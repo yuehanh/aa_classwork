@@ -36,7 +36,7 @@
         <select name= "cat[color]">
             <option disabled selected>Select a color</option>
             <% Cat::COLORS.each do |color| %>
-                <option value= "<%=color%>" <%= cat.color == color ? 'selected' : "" %>><%=color%>
+                <option value= "<%= color %>" <%= cat.color == color ? 'selected' : "" %>><%=color%>
             </option>
             <%end%>
         </select>
