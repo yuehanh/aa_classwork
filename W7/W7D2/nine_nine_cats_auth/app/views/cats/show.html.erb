@@ -26,3 +26,7 @@
     <%= render 'req_tr', req: req %>
   <% end %>
 </table>
+
+
+<% if @cat.owner?(current_user)%>
+<% end %>
