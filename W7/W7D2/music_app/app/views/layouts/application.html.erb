@@ -7,9 +7,12 @@
 
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
   </head>
 
   <body>  
+  <h1 class="main_logo"> Music App <h1>
+  <div class="login">
     <% if current_user %>
       <%= current_user.email %>
       <form action="<%= session_url %>" method = "post">
@@ -18,11 +21,27 @@
         <input type="submit" value="Logout">
       </form>
     <% else %>
-      <%= link_to "Sign Up", new_user_url %>
+      <div class = "button">
+      <%= link_to "Sign Up", new_user_url %>    
+      </div>
+      <div class = "button">
       <%= link_to "Sign In", new_session_url %>
+      </div>
     <% end %>
-
+  </div>
 
     <%= yield %>
+
+    <div class = "errors">
+    <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+        <li>
+          <%= error %>
+        </li>  
+      <% end %>
+    </ul>
+    <% end %>
+    </div>
   </body>
 </html>

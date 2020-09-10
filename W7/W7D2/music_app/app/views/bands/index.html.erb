@@ -1,0 +1,15 @@
+<section class="bandindexholder">
+    <nav>
+        <h2 class="pageheader">All the Bands</h2>
+        <a class ="button" href="<%= new_band_url %>">Add a New Band</a>
+    </nav>
+    <section class = "bandindex">
+        <ul>
+            <% @bands.each do |band| %>
+                <li>
+                    <%= band.name %>
+                </li>
+            <% end %>
+        </ul>
+    </section>
+</section>

@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-    validates :password, length: {minimum: 6}, allow_nil: true
+    validates :password, length: { minimum: 6 }, allow_nil: true
     validates :email, :session_token, presence: true, uniqueness: true
     validates :password_digest, presence: true
     before_validation :ensure_session_token # similar idea to 'after_initialize'
 
     attr_reader :password
-    
+
     # Associations:
 
     # SPIRE:
@@ -13,9 +13,10 @@ class User < ApplicationRecord
         SecureRandom.urlsafe_base64
     end
 
-    def self.find_by_credential(email, pw)
+    def self.find_by_credentials(email, pw)
         user = User.find_by(email: email)
         return nil unless user
+
         user.is_password?(pw) ? user : nil
     end
 
@@ -31,7 +32,7 @@ class User < ApplicationRecord
     end
 
     def is_password?(pw)
-        BCrypt::Passwrod.new(password_digest).is_password?(pw)
+        BCrypt::Password.new(password_digest).is_password?(pw)
     end
 
     private

@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Band.destroy_all
+
+20.times do
+    band = Band.create!(name: Faker::GreekPhilosophers.name)
+    rand(5).times do
+        Album.create(
+            title: Faker::Beer.name,
+            year: Faker::Date.between(from: 100.years.ago, to: Date.today).year,
+            live: rand(2) == 0,
+            band_id: band.id
+        )
+    end
+end

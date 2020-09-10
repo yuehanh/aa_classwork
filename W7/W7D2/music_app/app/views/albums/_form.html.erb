@@ -1,0 +1,40 @@
+<% action = (album.persisted? ? album_url(album) : albums_url) %>
+<% method = (album.persisted? ? :patch : :post) %>
+<% submit = (album.persisted? ? :update : :create) %>
+
+<form action="<%= action %>" method = "post">
+    <input type="hidden" name="authenticity_token" value = "<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="<%= method %>">
+
+    
+    <select name="album[band_id]">
+        <option selected disabled>Please select a band</option>
+        <% Band::all.each do |band| %>
+            <option value="<%= band.id %>" 
+            <%= album.band == band ? "selected" : "" %> >
+                <%= band.name.titleize %>
+            </option>
+        <% end %>
+    </select>
+
+    <p>
+    <%= radio_button_tag("album[live]", "true", album[:live] == true) %>
+    <%= label_tag("album[live]_true", "live") %>
+    <%= radio_button_tag("album[live]", "false", album[:live] == false) %>
+    <%= label_tag("album[live]_false", "studio") %>
+    </p>
+
+    <p>
+    <label for="title">Title</label>
+    <input type="text" name="album[title]" id="title" value=<%= album.title %>>
+    </p>
+
+    <p>
+    <label for="year">Year</label>
+    <input type="integer" name="album[year]" id="year" value=<%= album.year %>>
+    </p>
+
+    <input class= "button"type="submit" value="<%= submit %>">
+</form>
+
+

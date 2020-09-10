@@ -1,0 +1,20 @@
+<h1 class="pageheader">Albums</h1>
+
+<table>
+    <thead>
+        <tr>
+        <th colspan = "2"> <%= @album.title %> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @album.attributes.each do |key, val| %>
+             <tr>
+                <th><%= key %></th>
+                <td><%= val %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= button_to "Edit", edit_album_url(@album), method: :get %>
+<%= button_to "Delete", album_url(@album), method: :delete %>

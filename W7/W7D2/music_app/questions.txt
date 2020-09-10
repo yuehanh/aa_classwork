@@ -1,1 +1,4 @@
     # why do rails_service_blob etc. show up
+# why did cat_url(@cat) work, why doesn't it need cat_url(@cat.id)?
+# new_band_album: why do we need a dropdown if we already know what band_id is?
+    # follow instr anyways
