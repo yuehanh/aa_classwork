@@ -1,2 +1,13 @@
 <h1>Users#new</h1>
+
+
+<h2>'Sign Up'<h2>
+<form action="<%= users_url %>" method="POST">
+<input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>">
+    <label for="Username">username</label>
+    <input type="text" name="user[username]" id="Username">
+    <label for="Password">password</label>
+    <input type="password" name="user[password]" id="Password">
+    <input type="submit" value = "Create User">    
+</form>
 <p>Find me in app/views/users/new.html.erb</p>

@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :require_logged_in
 
+    private
+
     def current_user
-        reuturn nil unless session[:session_token]
+        return nil unless session[:session_token]
+
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
 
@@ -15,8 +18,8 @@ class ApplicationController < ActionController::Base
     end
 
     def logout!
+        current_user.reset_session_token! if logged_in?
         session[:session_token] = nil
-        current_user.reset_session_token!
         current_user = nil
     end
 
