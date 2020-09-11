@@ -14,7 +14,7 @@ body {
 
 button {
 	background-color: $light-blue;
-	border-color: red;
+	border: red;
 	color: $lightest-gray;
 	font-weight: 700;
 	padding: 7px 9px;
@@ -49,4 +49,12 @@ hr {
 .hr-top {
 	height: 2px;
 	margin-bottom: 1px;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.hidden{
+	display: none;
 }
