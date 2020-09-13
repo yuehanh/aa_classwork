@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-    before_action :require_no_user!, only: [:new, :create]
+    before_action :require_no_user!, only: %i[new create]
 
     def new
-        render :new
+        # render :new implicit
     end
 
     def create
@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
         ) # f_b_c will either be nil or <User>
         if user
             login!(user)
-            redirect_to user_url(user.id) # does 'user_url' require user.id?
+            redirect_to :bands # does 'user_url' require user.id?
             # check with routes
         else
-            flash.now[:errors] = ["You suck\n"]
+            flash.now[:errors] = ['Wrong Password and Username']
             render :new # don't want to redirect, b/c new will 'POST' again anyways
         end
     end

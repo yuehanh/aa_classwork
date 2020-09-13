@@ -1,15 +1,10 @@
 <h2 class="pageheader">Sign in</h2>
 
-<form class = "form" action="<%= session_url %>" method= 'POST'>
-    <input type= "hidden", name="authenticity_token", value = <%= form_authenticity_token %>>
-    <p>
-    <label for="email">Email</label>
-    <input type="text", id="email", name = "user[email]">
-    </p>
-
-    <p>
-    <label for="password">Password</label>
-    <input type="password", id = "password", name = "user[password]">
-    </p>
-    <input class = "button" type="submit" value="Submit">
-</form>
+<%= form_with scope: :user, url: :session, class: "form" do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit "Submit", class: "button" %>
+<% end %>

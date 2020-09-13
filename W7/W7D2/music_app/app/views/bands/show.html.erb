@@ -1,4 +1,27 @@
 <h1 class="pageheader"> <%= @band.name %></h1>
 
+<h2> Album List </h2>
+<ul>
+    <% @band.albums.each do |album| %>
+    <table>
+        <thead>
+            <tr>
+                <th colspan = "2">
+                    <%= link_to album.title, album_url(album) %>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% album.attributes.each do |key, val| %>
+                <tr>
+                    <th><%= key %></th>
+                    <td><%= val %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <% end %>
+</ul>
+<h2>Create New Album</h2>
 <%= render "albums/form", album: Album.new(band_id: params[:id]) %>
 

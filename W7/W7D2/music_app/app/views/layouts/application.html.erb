@@ -16,17 +16,13 @@
     <% if current_user %>
       <%= current_user.email %>
       <form action="<%= session_url %>" method = "post">
-        <input type="hidden" name="athuenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name ="_method" value = "DELETE">
-        <input type="submit" value="Logout">
+        <input type="submit" value="Logout" class = “button”>
       </form>
     <% else %>
-      <div class = "button">
-      <%= link_to "Sign Up", new_user_url %>    
-      </div>
-      <div class = "button">
-      <%= link_to "Sign In", new_session_url %>
-      </div>
+      <%= link_to "Sign Up", new_user_url, class: "button" %>    
+      <%= link_to "Sign In", new_session_url, class: "button" %>
     <% end %>
   </div>
 
