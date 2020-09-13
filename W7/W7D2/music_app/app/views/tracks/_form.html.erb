@@ -1,0 +1,48 @@
+<%= form_with(model: track, local: true) do |form| %>
+  <% if track.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+      <ul>
+      <% track.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :album_id %>
+    <%= form.select :album_id do %>
+      <option disabled selected>Please Select an Album</option>
+      <%= options_from_collection_for_select(Album.all, :id, :title) %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ord %>
+    <%= form.number_field :ord %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lytics %>
+    <%= form.text_area :lytics %>
+  </div>
+
+  <div class="field">
+    <%= form.label "regular", for: "regular" %>
+    <%= form.radio_button :regular, "true", id: "regular" %>
+    <%= form.label "bonus", for: "bonus" %>
+
+    <%= form.radio_button :regular, "false", id: "bonus" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

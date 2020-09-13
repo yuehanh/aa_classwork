@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_212540) do
+ActiveRecord::Schema.define(version: 2020_09_13_065208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,27 @@ ActiveRecord::Schema.define(version: 2020_09_09_212540) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "track_id"
+    t.text "note", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["track_id"], name: "index_notes_on_track_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.bigint "album_id"
+    t.string "title", null: false
+    t.integer "ord", null: false
+    t.text "lytics"
+    t.boolean "regular", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_tracks_on_album_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -41,4 +62,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_212540) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "notes", "tracks"
+  add_foreign_key "notes", "users"
+  add_foreign_key "tracks", "albums"
 end

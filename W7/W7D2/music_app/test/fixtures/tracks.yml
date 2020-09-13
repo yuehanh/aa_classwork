@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  album: one
+  title: MyString
+  ord: 1
+  lytics: MyText
+  regular: false
+
+two:
+  album: two
+  title: MyString
+  ord: 1
+  lytics: MyText
+  regular: false

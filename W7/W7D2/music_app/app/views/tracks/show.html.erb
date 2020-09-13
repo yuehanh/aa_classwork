@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @track.album.title %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @track.title %>
+</p>
+
+<p>
+  <strong>Ord:</strong>
+  <%= @track.ord %>
+</p>
+
+<p>
+  <strong>Lytics:</strong>
+  <%= @track.lytics %>
+</p>
+
+<p>
+  <strong>Regular:</strong>
+  <%= @track.regular %>
+</p>
+
+<%= link_to "Edit", edit_track_path(@track) %> |
+<%= link_to "Back", tracks_path %>
+
+<h2>Notes</h2>
+<% @track.notes.each do |note| %>
+    <%= render "notes/note", note: note %>
+<% end %>
+
+
+<h2>New Note</h2>
+<%= render "notes/form", note: Note.new %>

@@ -1,4 +1,4 @@
-<% submit = band.persisted? ? "Update" : "Create" %>
+<%# submit = band.persisted? ? "Update" : "Create" %> <%# rails default to Update Model, Create Model %>
 
 <%= form_with model: band, class: "form" do |f| %>
     <%= f.label :name %>

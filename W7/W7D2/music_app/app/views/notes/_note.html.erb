@@ -1,0 +1,14 @@
+<p>
+  <strong>User:</strong>
+  <%= note.user.email %>
+</p>
+
+
+<p>
+  <strong>Note:</strong>
+  <%= note.note %>
+</p>
+<% if current_user.id == note.user.id %>
+    <%= link_to "Edit", edit_note_path(note) %>
+    <%= link_to "Destroy", note, method: :delete %>
+<% end %>

@@ -1,24 +1,6 @@
-<h1 class="pageheader">Albums</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
-    <thead>
-        <tr>
-        <th colspan = "2"> <%= @album.title %> </th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @album.attributes.each do |key, val| %>
-             <tr>
-                <th><%= key %></th>
-                <td><%= val %></td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>
-
-<%= button_to "Edit", edit_album_url(@album), method: :get %>
-<%= button_to "Delete", album_url(@album), method: :delete %>
-
+<h1>Tracks</h1>
 
 <table>
   <thead>
@@ -33,10 +15,9 @@
   </thead>
 
   <tbody>
-    <% @album.tracks.each do |track| %>
+    <% @tracks.each do |track| %>
       <tr>
         <td><%= track.album.title %></td>
-        <td><%= track.album.id %></td>
         <td><%= track.title %></td>
         <td><%= track.ord %></td>
         <td><%= track.lytics %></td>
@@ -49,7 +30,6 @@
   </tbody>
 </table>
 
+<br>
 
-
-
-<%= render "tracks/form", track: Track.new %>
+<%= link_to "New Track", new_album_track_url(1) %>

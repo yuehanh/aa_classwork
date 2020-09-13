@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
         redirect_to bands_url if current_user
     end
 
+    def require_login!
+        redirect_to :new_session unless current_user
+    end
+
     def login!(user)
         session[:session_token] = user.reset_session_token!
     end
