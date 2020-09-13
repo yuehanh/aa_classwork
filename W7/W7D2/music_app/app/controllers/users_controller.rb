@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def new
         # if you want partial, @user = User.new
-        render :new
+        @user = User.new
     end
 
     def create
@@ -17,8 +17,8 @@ class UsersController < ApplicationController
         end
     end
 
-    private
 
+    private
     def user_params
         params.require(:user).permit(:email, :password)
         # add in a confirm pword?

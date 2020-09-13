@@ -1,5 +1,4 @@
 <h1 class="pageheader"> <%= @band.name %></h1>
-<ul>
-    <%   %>
-</ul>
+
+<%= render "albums/form", album: Album.new(band_id: params[:id]) %>
 
