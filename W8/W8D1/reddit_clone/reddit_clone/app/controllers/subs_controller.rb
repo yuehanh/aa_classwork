@@ -1,6 +1,7 @@
 class SubsController < ApplicationController
     before_action :set_sub, only: %i[show edit update destroy require_moderator]
     before_action :require_moderator, only: %i[update edit]
+    before_action :require_login
 
     # GET /subs
     # GET /subs.json

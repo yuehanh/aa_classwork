@@ -26,7 +26,13 @@
     <%= form.text_area :content %>
   </div>
 
-    <%= form.hidden_field :sub_id, value: params[:sub_id] %>
+  <div class="field">
+    <% Sub.all.each do |sub| %>
+        <%= form.label sub.title %>
+        <%= form.check_box :sub_id, { multiple: true }, sub.id %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
