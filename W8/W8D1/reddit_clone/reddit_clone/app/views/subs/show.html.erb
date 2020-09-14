@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+  <% if flash[:errors] %>
+
+    <div id="error_explanation">
+      <h2><%= pluralize(flash[:errors].count, "error") %> prohibited this sub from being saved:</h2>
+      <ul>
+      <% flash[:errors].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p>
+  <strong>Title:</strong>
+  <%= @sub.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sub.description %>
+</p>
+
+<p>
+  <strong>Moderator:</strong>
+  <%= @sub.moderator.username %>
+</p>
+
+<%= link_to 'Edit', edit_sub_path(@sub) %> |
+<%= link_to 'Back', subs_path %>
