@@ -27,8 +27,7 @@ class PostsController < ApplicationController
     # POST /posts.json
     def create
         @post = Post.new(post_params)
-thor_id = current_user.id
-        debugger
+        @post.author_id = current_user.id
         respond_to do |format|
             if @post.save
                 format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -80,6 +79,6 @@ thor_id = current_user.id
 
     # Only allow a list of trusted parameters through.
     def post_params
-        params.require(:post).permit(:title, :url, :content, sub_id: [], :author_id)
+        params.require(:post).permit(:title, :url, :content, :author_id, sub_ids: [])
     end
 end

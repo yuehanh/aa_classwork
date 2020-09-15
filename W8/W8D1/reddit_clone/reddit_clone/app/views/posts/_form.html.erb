@@ -29,7 +29,7 @@
   <div class="field">
     <% Sub.all.each do |sub| %>
         <%= form.label sub.title %>
-        <%= form.check_box :sub_id, { multiple: true }, sub.id %>
+        <%= form.check_box :sub_ids, { multiple: true }, sub.id, nil %>
     <% end %>
   </div>
 
