@@ -2,7 +2,7 @@ class Route
   attr_reader :pattern, :http_method, :controller_class, :action_name
 
   def initialize(pattern, http_method, controller_class, action_name)
-    
+
   end
 
   # checks if pattern matches path and method matches request method
@@ -13,7 +13,7 @@ class Route
   # instantiate controller and call controller action
   def run(req, res)
   end
-end
+end 
 
 class Router
   attr_reader :routes
