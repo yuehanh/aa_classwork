@@ -1,16 +1,16 @@
-<% action = (album.persisted? ? album_url(album) : albums_url) %>
-<% method = (album.persisted? ? :patch : :post) %>
-<% submit = (album.persisted? ? "Update" : "Create") %>
+<%# <% action = (album.persisted? ? album_url(album) : albums_url) %>
+<%# <% method = (album.persisted? ? :patch : :post) %>
+<%# <% submit = (album.persisted? ? "Update" : "Create") %> 
 
-<% # form_with model: album, class: "form" do |f| %>
-<%= form_with scope: :album, url: action, method: method, class: "form" do |f| %>
+<%  form_with model: album, class: "form" do |f| %>
     <%= f.label :band_id, "Band" %>
     <%= f.select :band_id do %>
         <option selected disabled>Please select a band </option>
         <%= options_from_collection_for_select(Band.all, :id, :name, album.band_id) %>
     <% end %>
-    <%= f.radio_button :live, "true", id: "live" %>
+
     <%= f.label "live", for: "live" %>
+    <%= f.radio_button :live, "true", id: "live" %>
     <%= f.label "studio", for: "studio" %>
     <%= f.radio_button :live, "false" %>
     <%= f.label :title %>
@@ -18,5 +18,5 @@
     <%= f.label :year %>
     <%= f.number_field :year %>
     <br>
-    <%= f.submit submit, class: "button" %>
+    <%= f.submit class: "button" %>
 <% end %>

@@ -1,6 +1,6 @@
 <h2 class="pageheader">Sign in</h2>
 
-<%= form_with scope: :user, url: :session, class: "form" do |f| %>
+<%= form_with scope: :user, url: :session do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
     <%= f.label :password %>
@@ -8,3 +8,5 @@
     <br>
     <%= f.submit "Submit", class: "button" %>
 <% end %>
+
+

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @singer.name %>
+</p>
+
+<p>
+  <strong>Band:</strong>
+  <%= @singer.band %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @singer.logo %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @singer.description %>
+</p>
+
+<%= link_to 'Edit', edit_singer_path(@singer) %> |
+<%= link_to 'Back', singers_path %>

@@ -5,31 +5,18 @@
 <form class = "form" action="<%= users_url %>" method= 'POST'>
     <input type="hidden" name="authenticity_token", value = "<%= form_authenticity_token %>">
     <p>
-    <label for="email">Email</label>
-    <input type="text", id="email", name = "user[email]">
+
+    <%= label :user, :email %>
+    <%= text_field :user, :email %>
     </p>
 
     <p>
-    <label for="password">Password</label>
-    <input type="password", id = "password", name = "user[password]">
+
+
+    <%= label :user, :password %>
+    <%= password_field :user, :password %>
     </p>
-    <input class = "button" type="submit" value="Submit">
+    <%= submit_tag "Submit", class: "button"%>
 </form>
 
 
-
-<form class = "form" action="<%= users_url %>" method= 'POST'>
-    <input type="hidden" name="authenticity_token", value = "<%= form_authenticity_token %>">
-    <p>
-    text_field_tag 
-    
-    <label for="email">Email</label>
-    <input type="text", id="email", name = "user[email]">
-    </p>
-
-    <p>
-    <label for="password">Password</label>
-    <input type="password", id = "password", name = "user[password]">
-    </p>
-    <input class = "button" type="submit" value="Submit">
-</form>

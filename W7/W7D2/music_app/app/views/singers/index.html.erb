@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Singers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Band</th>
+      <th>Logo</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @singers.each do |singer| %>
+      <tr>
+        <td><%= singer.name %></td>
+        <td><%= singer.band %></td>
+        <td><%= singer.logo %></td>
+        <td><%= singer.description %></td>
+        <td><%= link_to "Show", singer %></td>
+        <td><%= link_to "Edit", edit_singer_path(singer) %></td>
+        <td><%= button_to "Destroafwawey", singer, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Singer", new_singer_path %>
