@@ -1,8 +1,10 @@
 console.log("Webpack is working!")
 
 const MovingObject = require("./moving_object.js")
+const Asteroid = require("./asteroid.js")
 
 window.MovingObject = MovingObject
+window.Asteroid = Asteroid
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -15,4 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         color: "#00FF00"
     });
     mo.draw(ctx);
+
+    const as = new Asteroid({pos: [50,50]});
+    as.draw(ctx);
 });
