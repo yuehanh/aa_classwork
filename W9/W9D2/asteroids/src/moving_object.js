@@ -1,8 +1,12 @@
+const Util = require("./utils");
+
+
 function MovingObject(attr){
     this.pos = attr.pos;
     this.vel = attr.vel;
     this.radius = attr.radius;
     this.color = attr.color;
+    this.game = attr.game
 }
 
 MovingObject.prototype.draw = function (ctx){
@@ -21,6 +25,15 @@ MovingObject.prototype.draw = function (ctx){
 MovingObject.prototype.move = function(){
     this.pos[0] += this.vel[0];
     this.pos[1] += this.vel[1];
+    this.pos = this.game.warp(this.pos);
 }
+
+MovingObject.prototype.isCollidedWith = function(otherObject){
+     return Util.getDistance(this.pos, otherObject.pos) < (this.radius + otherObject.radius);
+}
+
+MovingObject.prototype.collideWith = function(otherObject){};
+
+
 
 module.exports = MovingObject;

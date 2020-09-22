@@ -14,6 +14,20 @@ const Util = {
       // Scale the length of a vector by the given amount.
     scale(vec, m) {
         return [vec[0] * m, vec[1] * m];
+    },
+
+    getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    },
+    
+    getDistance(posOne, posTwo){
+        return Math.sqrt((posOne[0] - posTwo[0])**2 + (posOne[1] - posTwo[1])**2);
+
     }
 };
 
