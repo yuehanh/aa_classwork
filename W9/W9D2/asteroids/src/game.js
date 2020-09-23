@@ -4,7 +4,7 @@ const Bullet = require("./bullet.js")
 
 Game.DIM_X = 1000;
 Game.DIM_Y = 600;
-Game.NUM_ASTEROIDS = 1;
+Game.NUM_ASTEROIDS = 20;
 
 function Game() {
     this.ship = new Ship({pos: this.randomPosition(), game: this});
