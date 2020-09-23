@@ -4,7 +4,7 @@ const Bullet = require("./bullet.js")
 
 Game.DIM_X = 1000;
 Game.DIM_Y = 600;
-Game.NUM_ASTEROIDS = 10;
+Game.NUM_ASTEROIDS = 1;
 
 function Game() {
     this.ship = new Ship({pos: this.randomPosition(), game: this});
@@ -47,7 +47,7 @@ Game.prototype.moveObjects = function () {
 };
 
 Game.prototype.warp = function (pos) {
-    return [pos[0] % Game.DIM_X, pos[1] % Game.DIM_Y];
+    return [(pos[0]+Game.DIM_X) % Game.DIM_X, (pos[1]+Game.DIM_Y) % Game.DIM_Y];
 };
 
 Game.prototype.checkCollisions = function() {
@@ -82,11 +82,11 @@ Game.prototype.remove = function(obj){
 };
 
 Game.prototype.allObjects = function(){
-    return this.asteroids.concat(this.ship).concat(this.bullets);
+    return this.asteroids.concat(this.ship,this.bullets);
 }; 
 
 
 Game.prototype.isOutOfBounds = function(pos){
-    return (pos[0] < 0 || pos[0] > this.DIM_X || pos[1] < 0 || pos[1] > this.DIM_Y)
+    return ((pos[0] < 0) || (pos[0] > Game.DIM_X) || (pos[1] < 0) || (pos[1] > Game.DIM_Y))
 }
 module.exports = Game;

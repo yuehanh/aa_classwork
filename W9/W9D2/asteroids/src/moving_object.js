@@ -26,13 +26,13 @@ MovingObject.prototype.draw = function (ctx){
 MovingObject.prototype.move = function(){
     this.pos[0] += this.vel[0];
     this.pos[1] += this.vel[1];
-    // this.pos = this.game.warp(this.pos);
+    // this.pos = [this.pos[0],this.pos[1]] // commenting out this line will cause ship's position to update with the bullet once it fires one.
 
     if (this.game.isOutOfBounds(this.pos)){
         if (this.isWrappable){
             this.pos = this.game.warp(this.pos);
         } else {
-            this.game.remove(this);
+            this.remove();
         }
     }
 }
@@ -43,6 +43,8 @@ MovingObject.prototype.isCollidedWith = function(otherObject){
 
 MovingObject.prototype.collideWith = function(otherObject){};
 
-
+MovingObject.prototype.remove = function remove() {
+    this.game.remove(this);
+};
 
 module.exports = MovingObject;

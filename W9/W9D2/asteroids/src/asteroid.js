@@ -4,6 +4,7 @@ const Ship = require("./ship.js");
 let mapa = new Image();
 mapa.src = 'mapa.png';
 
+Util.inherits(Asteroid, MovingObject);
 Asteroid.COLOR = "grey";
 Asteroid.RADIUS = 50;
 Asteroid.VEL_MAX = 10;
@@ -21,16 +22,14 @@ function Asteroid(attr) {
     });
 }
 
-Util.inherits(Asteroid, MovingObject);
 
 Asteroid.prototype.collideWith = function(otherObject){
-    if (otherObject instanceof Ship) {
-        Ship.prototype.relocate();
-    }
+//     if (otherObject instanceof Ship) {
+//         Ship.prototype.relocate();
+//     }
 };
 
 Asteroid.prototype.draw = function (ctx){
-    // console.log(this);
     ctx.drawImage(mapa,this.pos[0],this.pos[1],this.radius,this.radius);
 };
 

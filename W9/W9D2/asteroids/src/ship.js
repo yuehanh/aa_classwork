@@ -4,6 +4,7 @@ const Bullet = require("./bullet.js");
 
 Ship.RADIUS = 10;
 Ship.COLOR = "red";
+Util.inherits(Ship, MovingObject);
 
 function Ship(attr) {
     MovingObject.call(this, {
@@ -15,7 +16,6 @@ function Ship(attr) {
     });
 }
 
-Util.inherits(Ship, MovingObject);
 
 Ship.prototype.relocate = function () {
     this.vel = [0, 0];
