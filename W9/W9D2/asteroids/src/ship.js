@@ -1,5 +1,6 @@
 const Util = require("./utils.js");
-const MovingObject = require("./moving_object");
+const MovingObject = require("./moving_object.js");
+const Bullet = require("./bullet.js");
 
 Ship.RADIUS = 10;
 Ship.COLOR = "red";
@@ -32,7 +33,7 @@ Ship.prototype.fireBullet = function () {
         vel: this.vel,
         game: this.game,
     });
-    this.game.add(bullet)
+    this.game.add(bullet);
 };
 
 module.exports = Ship;

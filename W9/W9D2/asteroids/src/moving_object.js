@@ -1,5 +1,6 @@
 const Util = require("./utils");
 
+MovingObject.prototype.isWrappable = true;
 
 function MovingObject(attr){
     this.pos = attr.pos;
@@ -25,11 +26,19 @@ MovingObject.prototype.draw = function (ctx){
 MovingObject.prototype.move = function(){
     this.pos[0] += this.vel[0];
     this.pos[1] += this.vel[1];
-    this.pos = this.game.warp(this.pos);
+    // this.pos = this.game.warp(this.pos);
+
+    if (this.game.isOutOfBounds(this.pos)){
+        if (this.isWrappable){
+            this.pos = this.game.warp(this.pos);
+        } else {
+            this.game.remove(this);
+        }
+    }
 }
 
 MovingObject.prototype.isCollidedWith = function(otherObject){
-     return Util.getDistance(this.pos, otherObject.pos) < (this.radius + otherObject.radius);
+    return Util.getDistance(this.pos, otherObject.pos) < (this.radius + otherObject.radius);
 }
 
 MovingObject.prototype.collideWith = function(otherObject){};
