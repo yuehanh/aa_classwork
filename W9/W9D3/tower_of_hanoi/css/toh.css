@@ -1,0 +1,62 @@
+html,
+body,
+figure,
+figcaption,
+ul,
+li,
+h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    text-align: inherit;
+    list-style: none;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 30px;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hanoi{
+    display: flex;
+    width: 800px;
+    justify-content: center;
+}
+
+.pile{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-bottom: red solid 5px;
+}
+.disc{
+    background-color: grey;
+    margin-bottom: 15px;
+    height: 50px;
+    border-radius: 25px;
+
+}
+.disc-1{
+width: 75px;
+}
+
+.disc-2{
+    width: 125px;
+
+}
+
+.disc-3{
+    width: 175px;
+
+}
