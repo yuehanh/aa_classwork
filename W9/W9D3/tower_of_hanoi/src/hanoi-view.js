@@ -2,9 +2,10 @@ class HanoiView {
     constructor(game, rootEl) {
         this.game = game;
         this.root = rootEl;
+        this.ivar;
+        
         this.setupTowers();
         this.render();
-        this.ivar;
         this.clickTower();
     }
 
@@ -37,8 +38,7 @@ class HanoiView {
     clickTower() {
         const that = this;
         this.root.on("click", "ul", function (event) {
-            if (that.ivar == undefined) {
-                // need == comparison here since 0 is one of the value
+            if (that.ivar === undefined) {
                 that.ivar = $(event.currentTarget).data().idx;
             } else {
                 let response = that.game.move(
