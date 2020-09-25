@@ -1,0 +1,16 @@
+directives in application.js how do they work?
+
+
+ if(this.followState === "unfollowed"){
+            this.$element.each((idx, ele) => {
+                debugger;
+                $(ele).text("Follow!");
+            }) 
+        } else {
+
+
+            why doesnt .each return jquery object
+
+
+
+            Accept header? where is it?

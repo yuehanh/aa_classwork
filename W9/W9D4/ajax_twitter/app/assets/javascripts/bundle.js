@@ -86,14 +86,189 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/api_util.js":
+/*!******************************!*\
+  !*** ./frontend/api_util.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const APIUtil = {
+    followUser: (id) => {
+        return new Promise((resolve, reject) => {
+            resolve(
+                $.ajax({
+                    method: "POST",
+                    url: `/users/${id}/follow`,
+                    dataType: "JSON",
+                })
+            );
+        });
+    },
+
+    unfollowUser: (id) => {
+        // ...
+        return new Promise((resolve, reject) => {
+            resolve(
+                $.ajax({
+                    method: "DELETE",
+                    url: `/users/${id}/follow`,
+                    dataType: "JSON",
+                })
+            );
+        });
+    },
+};
+
+module.exports = APIUtil;
+
+// const myFirstPromise = new Promise((resolve, reject) => {
+//     // resolve will pass the argument to .then
+//     // reject passes the arg to .catch
+//     setTimeout(() => {
+//         resolve("failure");
+//         // reject("success")
+//     }, 3000);
+// });
+
+// myFirstPromise
+//     // .then will keep going as long as these are successful
+//     .then((successMessage) =>
+//         console.log(`Yaay!! ${successMessage} first then`)
+//     )
+//     .then((successMessage) =>
+//         console.log(`Yaay!! ${successMessage} second then`)
+//     )
+//     .catch((failureMessage) => console.log(`Booo !! ${failureMessage}`));
+
+
+/***/ }),
+
+/***/ "./frontend/follow_toggle.js":
+/*!***********************************!*\
+  !*** ./frontend/follow_toggle.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const APIUtil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+class FollowToggle {
+    constructor($ele) {
+        this.userID = $ele.data("user-id");
+        this.followState = $ele.data("initial-follow-state");
+        this.$element = $ele;
+        this.render();
+        this.handleClick();
+        
+    }
+
+    render() {
+        if (this.followState === "unfollowed") {
+            this.$element.text("Follow!");
+        } else {
+            this.$element.text("Unfollow!");
+        }
+    }
+
+    handleClick() {
+        const that = this;
+        this.$element.on("click", () => {
+            event.preventDefault();
+            if (that.followState === "unfollowed") {
+                // debugger
+                // Have to return the promise to call then on it after
+                // Dumbest way to refactor code
+                APIUtil.followUser(that.userID).then(() => {
+                    that.followState = "followed";
+                    that.render();
+                    // debugger
+
+                    this.$element.prop("disabled", false);
+                    $("h1").find(".sk-chase").remove();
+                });
+            } else {
+                // debugger
+                APIUtil.unfollowUser(that.userID).then(() => {
+                    that.followState = "unfollowed";
+                    that.render();
+                    // debugger
+                    this.$element.prop("disabled",false);
+                    $("h1").find(".sk-chase").remove();
+                });
+            }
+            this.$element.attr("disabled", true);
+            this.addSpinner();
+        });
+        
+    }
+
+
+    addSpinner(){
+        $("h1").append('<div class="sk-chase"><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div></div>')
+    }
+}
+
+// what are you doing?
+
+module.exports = FollowToggle;
+
+// const fetchNewGif = () => {
+//     // Initiate AJAX call to GIPHY API, take response and put on the DOM
+//     GifApiUtil.newGifAJAX()
+//       .then(response => {
+//         // extract url from response
+//         const url = response.data.image_url;
+//         // append image to .gif-display div element
+//         appendGif(url);
+//       })
+//   };
+
+
+/***/ }),
+
 /***/ "./frontend/twitter.js":
 /*!*****************************!*\
   !*** ./frontend/twitter.js ***!
   \*****************************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const FollowToggle = __webpack_require__(/*! ./follow_toggle.js */ "./frontend/follow_toggle.js");
+const APIUntil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+const UsersSearch = __webpack_require__(/*! ./users_search.js */ "./frontend/users_search.js")
+// whole function needs to be wrapped in parenthases to run whole function
+
+$( () => {
+    // debugger;
+    $("button.follow-toggle").each( (idx, ele) => {
+        const $followButton = $(ele);
+        const $followToggle = new FollowToggle($followButton);
+    })
+    // const $followButton =  $("button.follow-toggle");
+    // const $followToggle = new FollowToggle($followButton);
+
+    $("nav.users-search").each((idx, ele) =>{
+        const $userSearch = $(ele);
+        const $userSearchResult = new UsersSearch($userSearch);    })
+});
+
+/***/ }),
+
+/***/ "./frontend/users_search.js":
+/*!**********************************!*\
+  !*** ./frontend/users_search.js ***!
+  \**********************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-
+class UsersSearch {
+    constructor($ele){
+        this.$element = $ele;
+        this.input = $ele.find("input").eq(0).val()
+        this.ul = $ele.find("ul")
+    }
+}
 
 /***/ })
 
