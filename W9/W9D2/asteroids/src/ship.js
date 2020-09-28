@@ -16,7 +16,6 @@ function Ship(attr) {
     });
 }
 
-
 Ship.prototype.relocate = function () {
     this.vel = [0, 0];
     this.pos = this.game.randomPosition();
@@ -29,7 +28,7 @@ Ship.prototype.power = function (impulse) {
 
 Ship.prototype.fireBullet = function () {
     const bullet = new Bullet({
-        pos: [this.pos[0], this.pos[1]],   //de-couple position array pointer of the ship and the bullet
+        pos: [this.pos[0], this.pos[1]], //de-couple position array pointer of the ship and the bullet
         vel: this.vel,
         game: this.game,
     });
