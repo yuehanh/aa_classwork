@@ -1,0 +1,45 @@
+.clock {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: auto;
+    background-color: orange;
+    color: white;
+    font-family: 'Orbitron';
+}
+
+.time{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.date{
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+}
+
+.tab-header{
+    display: flex;
+}
+.tab-header li {
+    list-style: none;
+    width: 65px;
+    border-top: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 4px;
+    text-align: center;
+    cursor: pointer;
+    background-color: lightblue;
+}
+.tab-header li.active {
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: red;
+    border-bottom: none;
+}
