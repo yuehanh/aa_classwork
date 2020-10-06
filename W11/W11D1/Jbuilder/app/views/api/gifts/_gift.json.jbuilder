@@ -1,0 +1,1 @@
+json.extract! gift, :id, :title, :description, :guest_id

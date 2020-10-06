@@ -10,3 +10,4 @@ export default class TodoForm extends React.Component {
         body: "",
         done: false
       };
+    }
