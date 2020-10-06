@@ -1,0 +1,4 @@
+1. how do setup the window.fetchallpokem etc...
+2. Aside: configureStore Pattern
+This is a great pattern to continue using - instead of just exporting the store, we are exporting a function that creates and returns a store. This can be used in the future to swap out reducers, preloadedState, or enhancers depending on different conditions (e.g. development vs production environments).
+Doesnt this still require changing the code parametr in the store.js file
