@@ -1,0 +1,219 @@
+Started GET "/" for ::1 at 2020-10-07 13:33:26 -0700
+
+ActiveRecord::NoDatabaseError - FATAL:  database "bench_bnb_development" does not exist:
+
+Started POST "/__better_errors/640b104d0cbb6117/variables" for ::1 at 2020-10-07 13:33:27 -0700
+  [1m[35m (2048.4ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1504.0ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-10-07 13:35:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/config
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/images
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/javascripts
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/stylesheets
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4029033681841946295_70368665486220'
+
+Started POST "/__better_errors/8cb8ccc516cf0671/variables" for ::1 at 2020-10-07 13:35:14 -0700
+Started GET "/" for ::1 at 2020-10-07 13:35:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/config
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/images
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/javascripts
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/stylesheets
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4109524885612396464_70368305978700'
+
+Started POST "/__better_errors/2dbd9267c01e3027/variables" for ::1 at 2020-10-07 13:35:26 -0700
+Started GET "/" for ::1 at 2020-10-07 13:40:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/config
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/images
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/javascripts
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/stylesheets
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4109524885612396464_69968891280280'
+
+Started POST "/__better_errors/bf476c88cec64481/variables" for ::1 at 2020-10-07 13:40:12 -0700
+Started GET "/" for ::1 at 2020-10-07 13:40:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/config
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/images
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/javascripts
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/stylesheets
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4109524885612396464_69968884974780'
+
+Started POST "/__better_errors/809a9649664ec0e1/variables" for ::1 at 2020-10-07 13:40:48 -0700
+Started GET "/" for ::1 at 2020-10-07 13:40:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/config
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/images
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/javascripts
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/stylesheets
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4109524885612396464_70368286853100'
+
+Started POST "/__better_errors/3a1b65c587550f24/variables" for ::1 at 2020-10-07 13:40:54 -0700
+Started GET "/" for ::1 at 2020-10-07 13:41:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/config
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/images
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/javascripts
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/app/assets/stylesheets
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/conda/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /mnt/c/Users/NewWorld/Documents/Coding/AppAcademy/aa_classwork/W11/W11D3/benchbnb/bench_bnb/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4109524885612396464_69968781514260'
+
+Started POST "/__better_errors/bc2f1e815a15e923/variables" for ::1 at 2020-10-07 13:41:27 -0700
+Started GET "/" for ::1 at 2020-10-07 13:42:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.1ms)
+Completed 200 OK in 2174ms (Views: 2172.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-10-07 13:43:30 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-10-07 13:43:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 160ms (Views: 158.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (37.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6802361601607853190)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20201007204907)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201007204907_create_users.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20201007204907_create_users.rb:10
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20201007204907_create_users.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201007204907"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (5.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-07 20:50:33.883505"], ["updated_at", "2020-10-07 20:50:33.883505"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6802361601607853190)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
