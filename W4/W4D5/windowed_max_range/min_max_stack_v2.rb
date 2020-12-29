@@ -1,4 +1,4 @@
-require_relative 'my_stack'
+zrequire_relative 'my_stack'
 require 'byebug'
 class MinMaxStack
     def initialize

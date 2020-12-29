@@ -31,7 +31,7 @@ export const login = (user) => (dispatch) => {
             // debugger;
             return dispatch(receiveCurrentUser(payload));
         })
-        .catch((payload) => {
+        .fail((payload) => {
             // debugger
             dispatch(receiveError(payload));
         });
@@ -40,11 +40,11 @@ export const login = (user) => (dispatch) => {
 export const logout = () => (dispatch) => {
     return SessionUtil.logout()
         .then(() => dispatch(logoutCurrentUser()))
-        .catch((payload) => dispatch(receiveError(payload)));
+        .fail((payload) => dispatch(receiveError(payload)));
 };
 
 export const signUp = (user) => (dispatch) => {
     return SessionUtil.signUp(user)
         .then((payload) => dispatch(receiveCurrentUser(payload)))
-        .catch((payload) => dispatch(receiveError(payload)));
+        .fail((payload) => dispatch(receiveError(payload)));
 };

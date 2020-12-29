@@ -1,9 +1,11 @@
-require 'set'
-require 'byebug'
+require "set"
+require "byebug"
+
 class WordChainer
   attr_reader :seen
+
   def initialize
-    @dictionary = Set.new(File.readlines('dictionary.txt').map(&:chomp))
+    @dictionary = Set.new(File.readlines("dictionary.txt").map(&:chomp))
   end
 
   def adjacent_word(word)
@@ -26,7 +28,7 @@ class WordChainer
             @new_current_words << adword
             @seen[adword] = word
             break if @seen.key?(target)
-            end
+          end
           break if @seen.key?(target)
         end
         break if @seen.key?(target)
@@ -49,6 +51,6 @@ end
 
 if $PROGRAM_NAME == __FILE__
   test = WordChainer.new
-  test.explore_current_words('duck', 'ruby')
+  test.explore_current_words("duck", "ruby")
   p test.build_path
 end
